@@ -9,7 +9,7 @@ Virtualization is a resource management technology that abstracts and transforms
 
 In the actual production environment, virtualization technology is mainly used to solve the reorganization and reuse of high-performance physical hardware overcapacity and old hardware undercapacity so as to maximize the use of physical hardware. So the purpose of virtualization is to make full use of resources.
 
-![image](https://github.com/Noah-Du/Intern_2020/blob/master/Evolution%20of%20Vitualization.png)
+![image](https://github.com/Noah-Du/Intern_2020/blob/master/source/Evolution%20of%20Vitualization.png)
 
 
 # 2. Docker
