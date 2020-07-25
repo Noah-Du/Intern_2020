@@ -15,3 +15,24 @@ In the actual production environment, virtualization technology is mainly used t
 # 2. Docker
 
 ## 2.1 Container
+
+### Virtual Machine vs. Container
+Virtual machines and containers differ in several ways, but the primary difference is that containers provide a way to virtualize an OS so that multiple workloads can run on a single OS instance. With VMs, the hardware is being virtualized to run multiple OS instances. Containers’ speed, agility, and portability make them yet another tool to help streamline software development.
+
+## 2.2 Docker's advantage compared with classical virtualization
+1. The fast startup of docker belongs to the second level. The virtual machine usually takes a few minutes to start
+2. Docker requires fewer resources. Docker is virtualized at the operating system level. The docker container interacts with the kernel. There is almost no performance loss. The performance is better than virtualization through the Hypervisor layer and the kernel layer.
+3. Docker is lighter, and the docker architecture can share a core and shared application library, occupying very little memory. In the same hardware environment, Docker runs far more images than virtual machines, and the utilization of the system is very high.
+4. Compared with virtual machines, docker has weaker isolation. docker belongs to the isolation between processes, and virtual machines can achieve system-level isolation
+5. Security: The security of docker is also weaker. Docker's tenant root is equivalent to the host root. Once the user in the container is elevated from ordinary user privileges to root privileges, it will directly have the root privileges of the host and can perform unlimited operations. The root permissions of the virtual machine tenant and the root virtual machine permissions of the host machine are separated, and the virtual machine utilizes the ring-1 hardware isolation technology such as Intel's VT-d and VT-x. This isolation technology can prevent virtual machines from breaking through and each other Interaction, and the container has not yet had any form of hardware isolation, which makes the container vulnerable to attacks
+6. Manageability: docker's centralized management tools are not yet mature. Various virtualization technologies have mature management tools. For example, VMware vCenter provides complete virtual machine management capabilities
+7. High availability and recoverability: Docker's high availability support for business is achieved through rapid redeployment. Virtualization has mature guarantee mechanisms that have been tested in production practices such as load balancing, high availability, fault tolerance, migration, and data protection. VMware can promise 99.999% high availability of virtual machines to ensure business continuity
+8. Fast creation and deletion: Virtualization creation is in minutes, Docker container creation is in seconds. Docker's rapid iterative nature determines that it can save a lot of time in development, testing, and deployment.
+9. Delivery and deployment: Virtual machines can achieve consistency in environment delivery through mirroring, but mirroring distribution cannot be systematic. Docker records the container construction process in the Dockerfile, which can realize rapid distribution and rapid deployment in the cluster
+
+| Feature | Container | Virtual Machine |
+-----------------------------------------
+| Startup | seconds   | minutes         |
+| Hard Disks Usage | MB | GB            |
+| Performance | Close to OS | weaker than OS|
+| Systems | thousands | tens            |
