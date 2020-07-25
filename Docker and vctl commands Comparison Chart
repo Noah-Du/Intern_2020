@@ -1,0 +1,2 @@
+| docker | vctl | help |
+| build | build | Build a container image from a Dockerfile. |
