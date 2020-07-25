@@ -47,7 +47,7 @@
 
 
 
-Docker Options:
+## Docker Options:
 
 |      |                    |                                                              |
 | ---- | ------------------ | ------------------------------------------------------------ |
@@ -65,7 +65,7 @@ Docker Options:
 
 
 
-Docker Management Commands:
+## Docker Management Commands:
 
 |           |                               |
 | --------- | ----------------------------- |
@@ -84,3 +84,48 @@ Docker Management Commands:
 | trust     | Manage trust on Docker images |
 | volume    | Manage volumes                |
 
+## Docker commands classfication
+### Container Lifecycle Management
+    run
+    start/stop/restart
+    kill
+    rm
+    pause/unpause
+    create
+    exec
+
+### Container Operation
+    ps
+    inspect
+    top
+    attach
+    events
+    logs
+    wait
+    export
+    port
+
+### Container rootfs Commands
+    commit
+    cp
+    diff
+
+### Docker Hub
+    login
+    pull
+    push
+    search
+
+### Local Image Management
+    images
+    rmi
+    tag
+    build
+    history
+    save
+    load
+    import
+
+### info|version
+    info
+    version
