@@ -16,3 +16,18 @@ To deploy an HTTPS WEB site, the first step is to make the HTTP Tomcat base imag
         -validity 365 \
         -keystore tomcat.keystore \
         -storepass 123456
+
+### 2.2 Import the certificate
+    # docker run -it -v /root/ssl/:/tmp/ tomcat bash
+    root@8f8c200f632c:/usr/local/tomcat# ls
+    LICENSE  NOTICE  RELEASE-NOTES  RUNNING.txt  bin  conf  include  lib  logs  native-jni-lib  temp  webapps  work
+    root@8f8c200f632c:/usr/local/tomcat# ls /tmp/
+    tomcat.keystore
+    root@8f8c200f632c:/usr/local/tomcat# mkdir keys
+    root@8f8c200f632c:/usr/local/tomcat# cp /tmp/tomcat.keystore keys/  
+
+### 2.3 Modify tomcat configuration and commit
+    <Connector port="8080" protocol="HTTP/1.1"
+     connectionTimeout="20000"
+     redirectPort="8443" 
+     SSLEnabled="true" scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="/usr/local/tomcat/keys/tomcat.keystore" keystorePass="123456" /> 
