@@ -49,8 +49,6 @@
 
 Docker Options:
 
-|      |                    |                                                              |
-| ---- | ------------------ | ------------------------------------------------------------ |
 |      | --config string    | Location of client config files                              |
 | -c,  | --context string   | Name of the context to use to connect to the daemon (overrides DOCKER_HOST env var and default context set with "docker context use") |
 | -D,  | --debug            | Enable dubug mode                                            |
@@ -68,7 +66,6 @@ Docker Options:
 Docker Management Commands:
 
 | builder   | Manage builds                 |
-| --------- | ----------------------------- |
 | config    | Manage Docker configs         |
 | container | Manager containers            |
 | context   | Manage contexts               |
