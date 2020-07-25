@@ -31,3 +31,5 @@ To deploy an HTTPS WEB site, the first step is to make the HTTP Tomcat base imag
      connectionTimeout="20000"
      redirectPort="8443" 
      SSLEnabled="true" scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="/usr/local/tomcat/keys/tomcat.keystore" keystorePass="123456" /> 
+     
+     docker commit 8f8c200f632c tomcat:https
