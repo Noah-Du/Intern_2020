@@ -33,3 +33,17 @@ To deploy an HTTPS WEB site, the first step is to make the HTTP Tomcat base imag
      SSLEnabled="true" scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="/usr/local/tomcat/keys/tomcat.keystore" keystorePass="123456" /> 
      
      docker commit 8f8c200f632c tomcat:https
+
+## 3. Import the web source code into the Tomcat image
+### 3.1 Import static
+    COPY  ./websrc   /usr/local/tomcat/webapps/myproj/
+### 3.2 Dynamic mount
+    RUN mkdir -p /usr/local/tomcat/webapps/myproj
+    VOLUME /usr/local/tomcat/webapps/myproj
+
+    docker run -ti -v $(pwd)/websrc:/usr/local/tomcat/webapps/myproj
+
+## 4. Deployment and Verification
+    docker run -d -p 80:8080 -v websrc:/usr/local/tomcat/webapps/myproj myweb:v1
+    
+Now we can use browsers like Chrome to visit this site.
