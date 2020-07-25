@@ -30,9 +30,11 @@ Virtual machines and containers differ in several ways, but the primary differen
 8. Fast creation and deletion: Virtualization creation is in minutes, Docker container creation is in seconds. Docker's rapid iterative nature determines that it can save a lot of time in development, testing, and deployment.
 9. Delivery and deployment: Virtual machines can achieve consistency in environment delivery through mirroring, but mirroring distribution cannot be systematic. Docker records the container construction process in the Dockerfile, which can realize rapid distribution and rapid deployment in the cluster
 
-| Feature | Container | Virtual Machine |
------------------------------------------
-| Startup | seconds   | minutes         |
-| Hard Disks Usage | MB | GB            |
-| Performance | Close to OS | weaker than OS|
-| Systems | thousands | tens            |
+| Feature          | Container   | Virtual Machine |
+| ---------------- | ----------- | --------------- |
+| Startup          | seconds     | minutes         |
+| Hard Disks Usage | MB          | GB              |
+| Performance      | close to OS | weaker than OS  |
+| Systems support  | Thousands   | Tens            |
+
+
