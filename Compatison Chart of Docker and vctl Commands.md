@@ -67,8 +67,9 @@ Docker Options:
 
 Docker Management Commands:
 
-| builder   | Manage builds                 |
+|           |                               |
 | --------- | ----------------------------- |
+| builder   | Manage builds                 |
 | config    | Manage Docker configs         |
 | container | Manager containers            |
 | context   | Manage contexts               |
