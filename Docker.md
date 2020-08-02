@@ -51,6 +51,8 @@ UnionFS(联合文件系统):The Union file system is a hierarchical, lightweight
 
     The docker image is actually composed of a layered file system.
     
-·Bootfs (boot file system) mainly includes bootloader and kernel. Bootloader is mainly to boot and load the kernel. The bootfs file system will be loaded when linux first starts. At the bottom of the docker image is bootfs. This layer is the same as the Linux/Unix system, including bootloader and kernel. When the boot is loaded, the entire kernel is stored in memory. At this time, the right to use memory has been transferred to the kernel by bootfs. Bootfs will be uninstalled at this time.
+- Bootfs (boot file system) mainly includes bootloader and kernel. Bootloader is mainly to boot and load the kernel. The bootfs file system will be loaded when linux first starts. At the bottom of the docker image is bootfs. This layer is the same as the Linux/Unix system, including bootloader and kernel. When the boot is loaded, the entire kernel is stored in memory. At this time, the right to use memory has been transferred to the kernel by bootfs. Bootfs will be uninstalled at this time.
 
-·Rootfs (root file system) contains standard directories and files such as /dev, /proc, /bin, /etc in a typical linux system. Rootfs is a variety of different operating system distributions, such as Ubuntu/CentOS and so on.
+- Rootfs (root file system) contains standard directories and files such as /dev, /proc, /bin, /etc in a typical linux system. Rootfs is a variety of different operating system distributions, such as Ubuntu/CentOS and so on.
+
+- The centos we usually install into the virtual machine are 1 to several GB. Why is docker only 200MB here? For a streamlined OS, rootfs can be very small, and it only needs to include the most basic commands, tools, and programs. Because the bottom layer directly uses the Host's kernel, you only need to provide rootfs. It can be seen that the different linux distributions have the same bootfs, but the rootfs will be different. Therefore, different distributions can share bootfs.
