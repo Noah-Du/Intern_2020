@@ -56,3 +56,9 @@ UnionFS(联合文件系统):The Union file system is a hierarchical, lightweight
 - Rootfs (root file system) contains standard directories and files such as /dev, /proc, /bin, /etc in a typical linux system. Rootfs is a variety of different operating system distributions, such as Ubuntu/CentOS and so on.
 
 - The centos we usually install into the virtual machine are 1 to several GB. Why is docker only 200MB here? For a streamlined OS, rootfs can be very small, and it only needs to include the most basic commands, tools, and programs. Because the bottom layer directly uses the Host's kernel, you only need to provide rootfs. It can be seen that the different linux distributions have the same bootfs, but the rootfs will be different. Therefore, different distributions can share bootfs.
+
+### 2.3.4 Why Docker images use UnionFS
+
+    One of the biggest benefits is resource sharing.
+        
+For example: if there are multiple images built from the same base image, then the host only needs to save a copy of the base image on the disk. At the same time, only one base image needs to be loaded in the memory to serve all containers. And every layer of the mirror can be shared. Docker images are read-only. When the container starts, a new writable layer is loaded on top of the image. This layer is usually called the container layer, and below the container layer is called the mirror layer.
