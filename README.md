@@ -13,4 +13,4 @@ A daily working log for my internship at VMware in 2020.
 - [Golang Resources](https://github.com/Noah-Du/Intern_2020/blob/master/Golang%20Resources.md)
 
 ## Quik Link
-- [Project Nautilus](https://github/VMwareFusion/nautilus)
+- [Project Nautilus](https://github.com/VMwareFusion/nautilus)
