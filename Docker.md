@@ -2,7 +2,7 @@ This file is to record knowledge of docker I got through wesites.
 
 # 1. What is Virtualization?
 
-## 1.1 Concept
+##  Concept
 In computing, virtualization refers to the act of creating a virtual (rather than actual) version of something, including virtual computer hardware platforms, storage devices, and computer network resources.
 
 Virtualization is a resource management technology that abstracts and transforms various physical resources of a computer, such as servers, networks, memory, and storage. Virtualization breaks the inseparable barriers between physical structures, allowing users to use these resources in a better way than the original configuration. The new virtual part of these resources is not restricted by the way existing resources are erected,and geographical or physical configuration. Generally referred to as virtualized resources include computer power and data storage.
@@ -37,4 +37,20 @@ Virtual machines and containers differ in several ways, but the primary differen
 | Performance      | close to OS | weaker than OS  |
 | Systems support  | Thousands   | Tens            |
 
+## 2.3 Images
 
+### 2.3.1 What is images?
+
+Mirror is a lightweight, executable independent software package. The image is used to package the software operating environment and the software developed based on the operating environment. It contains all the content needed to run a certain software, including code, libraries, environment variables and configuration files needed at runtime.
+
+### 2.3.2 Why one image is so large?
+
+UnionFS(联合文件系统):The Union file system is a hierarchical, lightweight and high-performance file system. He supports the modification of the file system as one submission to superimpose layer by layer, and at the same time, different directories can be mounted under the same virtual file system. The Union file system is the basis of Docker images. This file system feature: Load multiple file systems at the same time, but from the outside, only one file system can be seen. Joint loading will superimpose each layer of file system, so that the final file system will contain all the underlying files and directories.
+
+### 2.3.3 Method of Image.
+
+    The docker image is actually composed of a layered file system.
+    
+·Bootfs (boot file system) mainly includes bootloader and kernel. Bootloader is mainly to boot and load the kernel. The bootfs file system will be loaded when linux first starts. At the bottom of the docker image is bootfs. This layer is the same as the Linux/Unix system, including bootloader and kernel. When the boot is loaded, the entire kernel is stored in memory. At this time, the right to use memory has been transferred to the kernel by bootfs. Bootfs will be uninstalled at this time.
+
+·Rootfs (root file system) contains standard directories and files such as /dev, /proc, /bin, /etc in a typical linux system. Rootfs is a variety of different operating system distributions, such as Ubuntu/CentOS and so on.
