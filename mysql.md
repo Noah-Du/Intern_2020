@@ -29,4 +29,8 @@
 
     docker exec mysql sh -c 'exec mysqldump --all-databases -uroot -p"$MYSQL_ROOT_PASSWORD"' > /root/all-databases.sql    ==>export all data
     docker exec mysql sh -c 'exec mysqldump --databases -uroot -p"$MYSQL_ROOT_PASSWORD"' > /root/all-databases.sql    ==>export specific data
-    docker exec mysql sh -c 'exec mysqldump --no-data --databases -uroot -p"$MYSQL_ROOT_PASSWORD"' > /root/all-databases.sql    ==>
+    docker exec mysql sh -c 'exec mysqldump --no-data --databases -uroot -p"$MYSQL_ROOT_PASSWORD"' > /root/all-databases.sql    
+    
+### 9. Execute sql file into mysql
+
+    docker exec -i mysql sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD"' < /root/xxx.sql
