@@ -18,6 +18,4 @@ Possible Solution:
 
 - 和docker的操作一样，通过修改vctl配置文件添加registry-mirrors键值来实现
 
-- 把image的url直接用mirror+image name (From Mentor)
-
 - 去实现一个新的小程序，比如vctlmirror，直接能通过os.exec调用vctl，把配好的proxy的image url发过去 (From Mentor)
