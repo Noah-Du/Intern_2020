@@ -10,6 +10,11 @@ docker可以通过修改配置文件daemon.json，在里面添加{"registry-mirr
 
 $ docker --registry-mirror=https://registry.docker-cn.com daemon
 
+
+–registry-mirror
+
+    镜像仓库会自动同步Docker Hub上的镜像到本地，在国内建立一个缓存，提交下载、上传速率
+
 --------------
 
 鉴于vctl在不指定镜像库的情况下也会从dockerhub中pull镜像，考虑是否可以为vctl添加命令来提高中国用户pull镜像的速度
