@@ -14,6 +14,10 @@ In the actual production environment, virtualization technology is mainly used t
 
 # 2. Docker
 
+docker structure:
+
+![image](https://github.com/Noah-Du/Intern_2020/blob/master/source/docker%20structure.jpeg)
+
 ## 2.1 Container
 
 ### Virtual Machine vs. Container
