@@ -49,8 +49,8 @@ docker pull dockerhub.azk8s.cn/library/mysql:5.7
 
 docker pull dockerhub.azk8s.cn/360cloud/wayne
 
-
 拉完了重新 tag 为你要的镜像。
+
 ---------------
 
 目前可用registry-mirror地址：
