@@ -24,3 +24,43 @@ Possible Solution:
 - 和docker的操作一样，通过修改vctl配置文件添加registry-mirrors键值来实现
 
 - 去实现一个新的小程序，比如vctlmirror，直接能通过os.exec调用vctl，把配好的proxy的image url发过去 (From Mentor)
+
+----------------
+
+如果我们在 docker 官方仓库拉取的镜像是以下形式：
+
+docker pull xxx:yyy
+
+那么使用 Azure 中国镜像，应该是这样拉取：
+
+docker pull dockerhub.azk8s.cn/library/xxx:yyy
+
+如果我们在 docker 官方仓库拉取的镜像是以下形式：
+
+docker pull xxx/yyy:zz
+
+那么使用 Azure 中国镜像，应该是这样拉取：
+
+docker pull dockerhub.azk8s.cn/xxx/yyy:zz
+
+下面以拉取 mysql:5.7 和 360cloud/wayne 为例，如下：
+
+docker pull dockerhub.azk8s.cn/library/mysql:5.7
+
+docker pull dockerhub.azk8s.cn/360cloud/wayne
+
+
+拉完了重新 tag 为你要的镜像。
+---------------
+
+目前可用registry-mirror地址：
+
+https://docker.mirrors.ustc.edu.cn/ -[中科大](https://mirrors.ustc.edu.cn/help/dockerhub.html)
+
+https://docker.mirrors.ustc.edu.cn/
+
+实践发现不可用地址：
+
+https://reg-mirror.qiniu.com/
+
+
