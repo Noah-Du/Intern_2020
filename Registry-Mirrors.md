@@ -55,7 +55,7 @@ docker pull dockerhub.azk8s.cn/360cloud/wayne
 
 目前可用registry-mirror地址：
 
-https://docker.mirrors.ustc.edu.cn/     [中科大](https://mirrors.ustc.edu.cn/help/dockerhub.html)
+https://docker.mirrors.ustc.edu.cn/     [科大镜像站](https://mirrors.ustc.edu.cn/help/dockerhub.html)
 
 https://docker.mirrors.ustc.edu.cn/     网易云
 
