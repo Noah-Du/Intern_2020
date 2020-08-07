@@ -61,7 +61,7 @@ https://docker.mirrors.ustc.edu.cn/     网易云
 
 实践发现不可用地址：
 
-https://reg-mirror.qiniu.com/
+https://reg-mirror.qiniu.com/           [七牛云](https://kirk-enterprise.github.io/hub-docs/#/user-guide/mirror)
 
 https://mirror.ccs.tencentyun.com       [腾讯云](https://cloud.tencent.com/document/product/457/9113)
 
