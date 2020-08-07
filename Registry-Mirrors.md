@@ -63,4 +63,7 @@ https://docker.mirrors.ustc.edu.cn/     网易云
 
 https://reg-mirror.qiniu.com/
 
+https://mirror.ccs.tencentyun.com       [腾讯云](https://cloud.tencent.com/document/product/457/9113)
+
+
 
