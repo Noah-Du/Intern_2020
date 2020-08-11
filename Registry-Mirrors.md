@@ -55,15 +55,22 @@ docker pull dockerhub.azk8s.cn/360cloud/wayne
 
 目前可用registry-mirror地址：
 
-https://docker.mirrors.ustc.edu.cn/     [科大镜像站](https://mirrors.ustc.edu.cn/help/dockerhub.html)
+https://docker.mirrors.ustc.edu.cn/             [科大镜像站](https://mirrors.ustc.edu.cn/help/dockerhub.html)
 
-https://docker.mirrors.ustc.edu.cn/     网易云
+https://docker.mirrors.ustc.edu.cn/             网易云
+
+https://<your_code>.mirror.aliyuncs.com/        [阿里云](https://cr.console.aliyun.com/)
+
+--> 阿里云需登陆进行系统分配
 
 实践发现不可用地址：
 
-https://reg-mirror.qiniu.com/           [七牛云](https://kirk-enterprise.github.io/hub-docs/#/user-guide/mirror)
+https://reg-mirror.qiniu.com/                   [七牛云](https://kirk-enterprise.github.io/hub-docs/#/user-guide/mirror)
 
-https://mirror.ccs.tencentyun.com       [腾讯云](https://cloud.tencent.com/document/product/457/9113)
+https://mirror.ccs.tencentyun.com               [腾讯云](https://cloud.tencent.com/document/product/457/9113)
 
+--> dockerhub镜像加速器地址需要在腾讯云 云服务器中配置才可生效，因为该地址只能在vpc里能解析，是没有公网解析的，因此只能在腾讯云cvm中使用。
 
+https://registry.docker-cn.com                  [docker中国官方镜像](https://www.docker.com/registry-mirror)
 
+http://f1361db2.m.daocloud.io                   [DaoCloud镜像站](https://www.daocloud.io/mirror)
