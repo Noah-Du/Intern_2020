@@ -11,7 +11,7 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
     }
-	fmt.Printf("%s\n", string(out))
+    fmt.Printf("%s\n", string(out))
   //fmt.Println(cmd)
   //out, err := cmd.CombinedOutput()
   //outString := string(out)
