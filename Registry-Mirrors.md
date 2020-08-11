@@ -15,16 +15,6 @@ $ docker --registry-mirror=https://registry.docker-cn.com daemon
 
     镜像仓库会自动同步Docker Hub上的镜像到本地，在国内建立一个缓存，提交下载、上传速率
 
---------------
-
-鉴于vctl在不指定镜像库的情况下也会从dockerhub中pull镜像，考虑是否可以为vctl添加命令来提高中国用户pull镜像的速度
-
-Possible Solution:
-
-- 和docker的操作一样，通过修改vctl配置文件添加registry-mirrors键值来实现
-
-- 去实现一个新的小程序，比如vctlmirror，直接能通过os.exec调用vctl，把配好的proxy的image url发过去 (From Mentor)
-
 ----------------
 
 如果我们在 docker 官方仓库拉取的镜像是以下形式：
@@ -55,22 +45,20 @@ docker pull dockerhub.azk8s.cn/360cloud/wayne
 
 目前可用registry-mirror地址：
 
-https://docker.mirrors.ustc.edu.cn/             [科大镜像站](https://mirrors.ustc.edu.cn/help/dockerhub.html)
+[科大镜像站](https://mirrors.ustc.edu.cn/help/dockerhub.html): https://docker.mirrors.ustc.edu.cn/
 
-https://docker.mirrors.ustc.edu.cn/             网易云
+网易云: https://docker.mirrors.ustc.edu.cn/
 
-https://<your_code>.mirror.aliyuncs.com/        [阿里云](https://cr.console.aliyun.com/)
+[阿里云](https://cr.console.aliyun.com/): https://<your_code>.mirror.aliyuncs.com/
 
 --> 阿里云需登陆进行系统分配
 
 实践发现不可用地址：
 
-https://reg-mirror.qiniu.com/                   [七牛云](https://kirk-enterprise.github.io/hub-docs/#/user-guide/mirror)
+[七牛云](https://kirk-enterprise.github.io/hub-docs/#/user-guide/mirror): https://reg-mirror.qiniu.com/
 
-https://mirror.ccs.tencentyun.com               [腾讯云](https://cloud.tencent.com/document/product/457/9113)
+[腾讯云](https://cloud.tencent.com/document/product/457/9113): https://mirror.ccs.tencentyun.com
 
---> dockerhub镜像加速器地址需要在腾讯云 云服务器中配置才可生效，因为该地址只能在vpc里能解析，是没有公网解析的，因此只能在腾讯云cvm中使用。
+[docker中国官方镜像](https://www.docker.com/registry-mirror): https://registry.docker-cn.com
 
-https://registry.docker-cn.com                  [docker中国官方镜像](https://www.docker.com/registry-mirror)
-
-http://f1361db2.m.daocloud.io                   [DaoCloud镜像站](https://www.daocloud.io/mirror)
+[DaoCloud镜像站](https://www.daocloud.io/mirror): http://f1361db2.m.daocloud.io
