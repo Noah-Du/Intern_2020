@@ -18,3 +18,4 @@ A daily working log for my internship at VMware in 2020.
 - [Golang Resources](https://github.com/Noah-Du/Intern_2020/blob/master/Golang%20Resources.md)
 - [Docker](https://github.com/docker/cli)
 - [Docker Daemon CLI](https://docs.docker.com/engine/reference/commandline/dockerd/#daemon)
+- [Golang标准库文档](https://studygolang.com/pkgdoc)
