@@ -47,7 +47,7 @@ docker pull dockerhub.azk8s.cn/360cloud/wayne
 
 [科大镜像站](https://mirrors.ustc.edu.cn/help/dockerhub.html): https://docker.mirrors.ustc.edu.cn/
 
-网易云: https://docker.mirrors.ustc.edu.cn/
+网易云: https://hub-mirror.c.163.com
 
 [阿里云](https://cr.console.aliyun.com/): https://<your_code>.mirror.aliyuncs.com/
 
