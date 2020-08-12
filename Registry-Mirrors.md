@@ -47,7 +47,7 @@ docker pull dockerhub.azk8s.cn/360cloud/wayne
 
 [科大镜像站](https://mirrors.ustc.edu.cn/help/dockerhub.html): https://docker.mirrors.ustc.edu.cn/
 
-网易云: https://hub-mirror.c.163.com
+网易云: https://hub-mirror.c.163.com/
 
 [阿里云](https://cr.console.aliyun.com/): https://<your_code>.mirror.aliyuncs.com/
 
@@ -57,8 +57,8 @@ docker pull dockerhub.azk8s.cn/360cloud/wayne
 
 [七牛云](https://kirk-enterprise.github.io/hub-docs/#/user-guide/mirror): https://reg-mirror.qiniu.com/
 
-[腾讯云](https://cloud.tencent.com/document/product/457/9113): https://mirror.ccs.tencentyun.com
+[腾讯云](https://cloud.tencent.com/document/product/457/9113): https://mirror.ccs.tencentyun.com/
 
-[docker中国官方镜像](https://www.docker.com/registry-mirror): https://registry.docker-cn.com
+[docker中国官方镜像](https://www.docker.com/registry-mirror): https://registry.docker-cn.com/
 
-[DaoCloud镜像站](https://www.daocloud.io/mirror): http://f1361db2.m.daocloud.io
+[DaoCloud镜像站](https://www.daocloud.io/mirror): http://f1361db2.m.daocloud.io/
