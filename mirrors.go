@@ -1,22 +1,29 @@
 package main
 
 import (
+	"flag"
 	"fmt"
+	"os"
 	"os/exec"
+	//	log "github.com/sirupsen/logrus"
 )
-
-// 1. 如何设置成多镜像线路可自己切换？
 
 func main() {
 	var name string
-	fmt.Println("请输入要下载的镜像名称及版本")
-	fmt.Scanln(&name)
-	name = "hub-mirror.c.163.com/library/" + name
-	fmt.Printf("%v", name)
-	cmd := exec.Command("vctl", "pull", name)
-	out, err := cmd.Output()
+	var accelerator string
+
+	flag.StringVar(&name, "i", "", "镜像，默认为空")
+	flag.StringVar(&accelerator, "a", "hub-mirror.c.163.com/library/", "加速器url，默认为网易云加速器")
+	flag.Parse()
+
+	download := accelerator + name
+	fmt.Printf("下载路径为%v", download)
+	cmd := exec.Command("vctl", "pull", download)
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	err := cmd.Run()
 	if err != nil {
-		fmt.Println(err)
-    }
-	fmt.Printf("%s\n", string(out))
+		fmt.Println("cmd.Output: ", err)
+		return
+	}
 }
