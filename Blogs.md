@@ -38,7 +38,8 @@ Default setting of registry mirrors is 163yun with url https://hub-mirror.c.163.
 
 ![images](https://github.com/Noah-Du/Intern_2020/blob/master/source/mirrors%20example.png)
 
-But you need to remember that your registry mirrors url must end with repositories directory like `/library/`.
+In this example, I change the registry mirrors to a new registry mirror from Alibaba Cloud and download centos's latest images.
+One thing you need know is that your registry mirrors url must end with repositories directory like `/library/`.
 
 ### Registry Mirrors Url for Chinese Users
 
