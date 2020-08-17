@@ -36,3 +36,5 @@ Then you would get a executable file called `mirrors`. And then you can run it w
 
 One thing to notice that you need to add `-i` before the images you would like to pull and `-a` before the registry mirror's url you would like to change.
 This registry mirrors is 
+
+### Registry Mirrors Url for Chinese Users
