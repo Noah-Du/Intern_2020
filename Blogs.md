@@ -32,11 +32,11 @@ You can download the filr mirrors.go from this github and use it to set the regi
     > ls
       mirrors		mirrors.go
       
-Then you would get a executable file called `mirrors`. And then you can run it with images you want to pull or change the registry mirrors:
-
-
+Then you would get a executable file called `mirrors`. And then you can run it with images you want to pull or change the registry mirrors.
 One thing to notice that you need to add `-i` before the images you would like to pull and `-a` before the registry mirror's url you would like to change.
 Default setting of registry mirrors is 163yun with url https://hub-mirror.c.163.com.
+
+![images](https://github.com/Noah-Du/Intern_2020/blob/master/source/mirrors%20example.png)
 
 But you need to remember that your registry mirrors url must end with repositories directory like `/library/`.
 
