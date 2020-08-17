@@ -45,6 +45,6 @@ Here are some registry mirrors you can use with the addresses.
 
 | Registry Mirrors | Addresses                               | Exclusive or Not                |
 | ---------------- | --------------------------------------- | ------------------------------- |
-| USTC             | https://docker.mirrors.ustc.edu.cn      |                                 |
-| Alibaba Cloud    | https://<your_code>.mirror.aliyuncs.com | Need to sign in and get the url |
-| 163yun           | https://hub-mirror.c.163.com            |                                 |
+| [USTC](https://mirrors.ustc.edu.cn/help/dockerhub.html)             | https://docker.mirrors.ustc.edu.cn      |                                 |
+| [Alibaba Cloud](https://cr.console.aliyun.com/)    | https://<your_code>.mirror.aliyuncs.com | Need to sign in and get the url |
+| [163yun](https://c.163yun.com/hub)           | https://hub-mirror.c.163.com            |                                 |
