@@ -16,6 +16,7 @@ If you have tried Docker to configure a registry mirror, you could know that you
     }
     
 But we do not have the configuration file like dockerd to set a registry mirror with Project Nautilus. Then how can we do it?
+
 There are two ways to use it easily:
 
 #### 1. Add Resgistry Mirrors Url In Pulling Command
@@ -24,11 +25,15 @@ When you use "vctl pull" command, you can add the registry url before the images
 
 ![images](https://github.com/Noah-Du/Intern_2020/blob/master/source/vctl%20pull%20example.png)
 
+The command format should be:
+
+    vctl pull url/library/images-name:version
+
 Using this way, we can pull the images from local mirrors. But this method cannot set the registry mirrors permanently. You need to add the registry mirrors' url every time you pull.
 
 #### 2. Using the Mirrors.go Plug-in
 
-You can download the filr mirrors.go from this github and use it to set the registry mirrors permanently. After you download it, you can compile it with command:
+You can download the file `mirrors.go` from this github and use it to set the registry mirrors permanently. After you download it, you can compile it with command:
 
     > go build mirrors.go
     > ls
