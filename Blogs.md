@@ -22,6 +22,8 @@ There are two ways to use it easily:
 
 When you use "vctl pull" command, you can add the registry url before the images' names. Here is the example:
 
+![images](https://github.com/Noah-Du/Intern_2020/blob/master/source/vctl%20pull%20example.png)
+
 Using this way, we can pull the images from local mirrors. But this method cannot set the registry mirrors permanently. You need to add the registry mirrors' url every time you pull.
 
 #### 2. Using the Mirrors.go Plug-in
