@@ -37,4 +37,14 @@ Then you would get a executable file called `mirrors`. And then you can run it w
 One thing to notice that you need to add `-i` before the images you would like to pull and `-a` before the registry mirror's url you would like to change.
 This registry mirrors is 
 
+But you need to remember that your registry mirrors url must end with repositories directory like `/library/`.
+
 ### Registry Mirrors Url for Chinese Users
+
+Here are some registry mirrors you can use with the addresses.
+
+| Registry Mirrors | Addresses                               | Exclusive or Not                |
+| ---------------- | --------------------------------------- | ------------------------------- |
+| USTC             | https://docker.mirrors.ustc.edu.cn      |                                 |
+| Alibaba Cloud    | https://<your_code>.mirror.aliyuncs.com | Need to sign in and get the url |
+| 163yun           | https://hub-mirror.c.163.com            |                                 |
