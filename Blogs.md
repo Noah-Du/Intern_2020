@@ -29,7 +29,7 @@ The command format should be:
 
     vctl pull url/library/images-name:version
 
-Using this way, we can pull the images from local mirrors. But this method cannot set the registry mirrors permanently. You need to add the registry mirrors' url every time you pull.
+Using this way, we can pull the images from local mirrors. But this method cannot set the registry mirrors permanently. You need to add the registry mirrors' url every time you pull. And please remember that url does not contain `http://`.
 
 #### 2. Using the Mirrors.go Plug-in
 
