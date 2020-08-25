@@ -7,10 +7,15 @@ import (
 	"os/exec"
 	"strings"
 
+	"github.com/go-ini/ini"
+
 	"github.com/sirupsen/logrus"
 )
 
 var log = logrus.New()
+
+// Conf contains config of the app
+var Conf = new(MirrorConfig)
 
 func foo() {
 
@@ -32,29 +37,52 @@ func foo() {
 	}
 }
 
+// MirrorConfig config
+type MirrorConfig struct {
+	Registry string `ini:"registry"`
+}
+
+func init() {
+	if err := ini.MapTo(Conf, "registry.ini"); err != nil {
+		log.Fatalf("Failed to parse config file: %v\n", err)
+	}
+}
+
 func main() {
 	foo()
+
+	cfg := ini.Empty()
 
 	// Create variable 'name' to store image's name, 'accelerator' to store registry mirror's url
 	var name string
 	var accelerator string
 
 	flag.StringVar(&name, "i", "", "image，set to empty")
-	flag.StringVar(&accelerator, "a", "hub-mirror.c.163.com/library/", "registry mirror url，set to 163yun")
+	flag.StringVar(&accelerator, "a", "", "registry mirror url")
 	flag.Parse()
 
-	if strings.HasPrefix(accelerator, "https://") {
-		fmt.Println("Registry Mirror address should not contain 'https://', please eliminate it.")
-		log.Fatal("Please fix the error and retry.")
+	if accelerator != "" {
+		if strings.HasPrefix(accelerator, "https://") {
+			fmt.Println("Registry Mirror address should not contain 'https://', please eliminate it.")
+			log.Fatal("Please fix the error and retry.")
+		}
+
+		if !strings.HasSuffix(accelerator, "/library/") {
+			fmt.Println("Registry Mirror address should end with '/library/', please fix it.")
+			log.Fatal("Please fix the error and retry.")
+		}
+
+		Conf.Registry = accelerator
 	}
 
-	if !strings.HasSuffix(accelerator, "/library/") {
-		fmt.Println("Registry Mirror address should end with '/library/', please fix it.")
-		log.Fatal("Please fix the error and retry.")
-	}
-
-	download := accelerator + name
+	download := Conf.Registry + name
 	fmt.Printf("Download Address Is: %v \n", download)
+
+	if err := ini.ReflectFrom(cfg, &Conf); err != nil {
+		log.Fatalln(err)
+	}
+	cfg.SaveToIndent("registry.ini", "\t")
+
 	cmd := exec.Command("vctl", "pull", download)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
