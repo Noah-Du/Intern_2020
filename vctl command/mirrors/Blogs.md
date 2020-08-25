@@ -15,9 +15,22 @@ If you have tried Docker to configure a registry mirror, you could know that you
       "registry-mirrors": ["https://<my-docker-mirror-host>"]
     }
     
-But we do not have the configuration file like dockerd to set a registry mirror with Project Nautilus. Then how can we do it?
+But vctl does not have the configuration file like dockerd to set a registry mirror. Then how can we do it?
 
 There are two ways to use it easily:
+
+#### Before Try It
+
+Remember that you need to install and start vctl first and download `mirrors.go` and `registry.ini` in this github.
+
+    > vctl system start
+    Preparing storage...
+    Container storage has been prepared successfully under /path/
+    Preparing container network, you may be prompted to input password for administrative operations...
+    Password:
+    Container network has been prepared successfully using vmnet: vmnet9
+    Launching container runtime...
+    Container runtime has been started.
 
 #### 1. Add Resgistry Mirrors Url In Pulling Command
 
@@ -41,12 +54,14 @@ You can download the file `mirrors.go` from this github and use it to set the re
       
 Then you would get a executable file called `mirrors`. And then you can run it with images you want to pull or change the registry mirrors.
 One thing to notice that you need to add `-i` before the images you would like to pull and `-a` before the registry mirror's url you would like to change.
-Default setting of registry mirrors is 163yun with url https://hub-mirror.c.163.com.
+Default setting of registry mirrors is 163yun with url https://hub-mirror.c.163.com in `registry.ini` file.
 
 ![images](https://github.com/Noah-Du/Intern_2020/blob/master/source/mirrors%20example.png)
 
 In this example, I change the registry mirrors to a new registry mirror from Alibaba Cloud and download centos's latest images.
-One thing you need know is that your registry mirrors url must end with repositories directory like `/library/`.
+One thing you need know is that your registry mirrors url must end with repositories directory like `/library/` and do not need `https://` in url.
+
+Every time you add `-a` with the registry mirror url, it would be set in `registry.ini` and changed permanently! If you want to change it again, you can use the same way mentioned before or go to `registry.ini` file to set it directly.
 
 ### Registry Mirrors Url for Chinese Users
 
