@@ -3,14 +3,38 @@ package main
 import (
 	"flag"
 	"fmt"
-	"log"
 	"os"
 	"os/exec"
 	"strings"
-	//	log "github.com/sirupsen/logrus"
+
+	"github.com/sirupsen/logrus"
 )
 
+var log = logrus.New()
+
+func foo() {
+
+	log.SetReportCaller(true)
+
+	log.SetFormatter(&logrus.TextFormatter{
+		TimestampFormat: "2006-01-02 15:04:05",
+	})
+	// The API for setting attributes is a little different than the package level
+	// exported logger. See Godoc.
+	log.SetOutput(os.Stdout)
+
+	// You could set this to any `io.Writer` such as a file
+	file, err := os.OpenFile("logrus.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	if err == nil {
+		log.Out = file
+	} else {
+		log.Info("Failed to log to file, using default stderr")
+	}
+}
+
 func main() {
+	foo()
+
 	// Create variable 'name' to store image's name, 'accelerator' to store registry mirror's url
 	var name string
 	var accelerator string
