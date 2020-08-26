@@ -58,7 +58,7 @@ Then you would get a executable file called `mirrors`. And then you can run it w
 One thing to notice that you need to add `-i` before the images you would like to pull and `-a` before the registry mirror's url you would like to change.
 Default setting of registry mirrors is 163yun with url https://hub-mirror.c.163.com in `registry.ini` file.
 
-![images](https://github.com/Noah-Du/Intern_2020/blob/master/source/mirrors%20example.png)
+![images](https://github.com/Noah-Du/Intern_2020/blob/master/source/mirrors%20try.png)
 
 In this example, I change the registry mirrors to a new registry mirror from Alibaba Cloud and download centos's latest images.
 One thing you need know is that your registry mirrors url must end with repositories directory like `/library/` and do not need `https://` in url.
