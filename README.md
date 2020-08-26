@@ -5,8 +5,6 @@ A daily working log for my internship at VMware in 2020.
 - Summarize docker users' workflow/best practices and try to use vctl to accomplish them
   & Find the priority to add vctl commands
 - Use Golang to program vctl commands
-- Try to add registry mirrors through vctl
-    [(Registry-Mirrors)](https://github.com/Noah-Du/Intern_2020/blob/master/Registry-Mirrors.md)
 
 ## Directory
 - [Docker Knowledge](https://github.com/Noah-Du/Intern_2020/blob/master/Docker.md)
