@@ -4,7 +4,6 @@ A daily working log for my internship at VMware in 2020.
 ## Working Goal
 - Summarize docker users' workflow/best practices and try to use vctl to accomplish them
   & Find the priority to add vctl commands
-- Use Golang to program vctl commands
 
 ## Directory
 - [Docker Knowledge](https://github.com/Noah-Du/Intern_2020/blob/master/Docker.md)
