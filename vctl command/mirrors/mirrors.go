@@ -63,13 +63,11 @@ func main() {
 
 	if accelerator != "" {
 		if strings.HasPrefix(accelerator, "https://") {
-			fmt.Println("Registry Mirror address should not contain 'https://', please eliminate it.")
-			log.Fatal("Please fix the error and retry.")
+			accelerator = strings.TrimLeft(accelerator, "https://")
 		}
 
 		if !strings.HasSuffix(accelerator, "/library/") {
-			fmt.Println("Registry Mirror address should end with '/library/', please fix it.")
-			log.Fatal("Please fix the error and retry.")
+			accelerator += "/library/"
 		}
 
 		Conf.Registry = accelerator
