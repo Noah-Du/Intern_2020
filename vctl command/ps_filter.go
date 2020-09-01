@@ -25,14 +25,25 @@ type Features []Feature
 func main() {
 
 	var filter string
+	var out []byte
+	var err error
 
 	flag.StringVar(&filter, "f", "", "filter, set to empty")
+	boolPtr := flag.Bool("a", false, "whether see all containers or only running, set to false")
 	flag.Parse()
 
-	cmd := exec.Command("vctl", "ps")
-	out, err := cmd.Output()
-	if err != nil {
-		fmt.Println(err)
+	if *boolPtr == true {
+		cmd := exec.Command("vctl", "ps", "-a")
+		out, err = cmd.Output()
+		if err != nil {
+			fmt.Println(err)
+		}
+	} else {
+		cmd := exec.Command("vctl", "ps")
+		out, err = cmd.Output()
+		if err != nil {
+			fmt.Println(err)
+		}
 	}
 
 	if filter == "" {
