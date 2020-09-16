@@ -3,7 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
+	"html/template"
 	"log"
+	"os"
 	"os/exec"
 	"strings"
 )
@@ -25,10 +27,17 @@ type Features []Feature
 func main() {
 
 	var filter string
+	var format string
 	var out []byte
 	var err error
+	var t *template.Template
+	t = template.New("kawaii")
+
+	var list Features
+	obj := Feature{}
 
 	flag.StringVar(&filter, "f", "", "filter, set to empty")
+	flag.StringVar(&format, "format", "", "format, set to empty")
 	boolPtr := flag.Bool("a", false, "whether see all containers or only running, set to false")
 	flag.Parse()
 
@@ -47,7 +56,11 @@ func main() {
 	}
 
 	if filter == "" {
-		fmt.Printf("%s\n", string(out))
+		if format == "" {
+			fmt.Printf("%s\n", string(out))
+		} else {
+
+		}
 	} else {
 
 		req := strings.Split(filter, "=")
@@ -55,10 +68,8 @@ func main() {
 
 		result := strings.Split(string(out), "\n")
 
-		var list Features
-
 		for i := 3; i < len(result)-1; i++ {
-			obj := Feature{}
+
 			fmt.Sscanf(result[i], "%s %s %s %s %s %s %s", &obj.NAME, &obj.IMAGE, &obj.COMMAND,
 				&obj.IP, &obj.PORTS, &obj.STATUS, &obj.CREATIONTIME)
 			switch req[0] {
@@ -90,18 +101,39 @@ func main() {
 				if strings.Contains(obj.CREATIONTIME, req[1]) {
 					list = append(list, obj)
 				}
+			case "EXITED":
+				if strings.Contains(obj.STATUS, req[1]) {
+					list = append(list, obj)
+				}
+			case "ANCESTOR": //need revise
+				if strings.Contains(obj.IMAGE, req[1]) {
+					list = append(list, obj)
+				}
+			case "PUBLISH":
+				if strings.Contains(obj.PORTS, req[1]) {
+					list = append(list, obj)
+				}
 			default:
 				log.Fatal("Input is wrong, please try again")
 			}
 		}
 
-		for i := 0; i < 3; i++ {
-			fmt.Printf("%s\n", result[i])
-		}
+		if format == "" {
+			for i := 0; i < 3; i++ {
+				fmt.Printf("%s\n", result[i])
+			}
 
-		for _, v := range list {
-			fmt.Printf("%-14s%-16s%-12s%-18s%-8s%-10s%-9s\n", v.NAME, v.IMAGE, v.COMMAND, v.IP, v.PORTS,
-				v.STATUS, v.CREATIONTIME)
+			for _, v := range list {
+				fmt.Printf("%-14s%-16s%-12s%-6s%-8s%-10s%-9s\n", v.NAME, v.IMAGE, v.COMMAND, v.IP, v.PORTS,
+					v.STATUS, v.CREATIONTIME)
+			}
+		} else {
+			format = strings.ToUpper(format)
+			format = format + "\n"
+			t, _ = t.Parse(format)
+			for _, c := range list {
+				t.Execute(os.Stdout, c)
+			}
 		}
 	}
 }
